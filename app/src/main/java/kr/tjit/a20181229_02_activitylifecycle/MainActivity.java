@@ -2,8 +2,10 @@ package kr.tjit.a20181229_02_activitylifecycle;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends BaseActivity {
 
@@ -16,6 +18,17 @@ public class MainActivity extends BaseActivity {
         bindViews();
         setupEvents();
         setValues();
+
+        Toast.makeText(mContext, "Main - onCreate", Toast.LENGTH_SHORT).show();
+        Log.d("Main", "onCreate");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        Toast.makeText(mContext, "Main - onResume", Toast.LENGTH_SHORT).show();
+        Log.d("Main", "onResume");
     }
 
     @Override
